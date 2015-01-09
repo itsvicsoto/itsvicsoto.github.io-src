@@ -570,17 +570,12 @@ body {
 /* line 12, ../../source/scss/base/_base.scss */
 a {
   color: #df2e30;
-  text-decoration: none;
-  -webkit-transition: all 0.3s ease-in-out;
-  -moz-transition: all 0.3s ease-in-out;
-  -ms-transition: all 0.3s ease-in-out;
-  -o-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out; }
-  /* line 17, ../../source/scss/base/_base.scss */
+  text-decoration: none; }
+  /* line 16, ../../source/scss/base/_base.scss */
   a:hover {
     color: #bd1d1f; }
 
-/* line 22, ../../source/scss/base/_base.scss */
+/* line 21, ../../source/scss/base/_base.scss */
 ::-moz-selection {
   background: #df2e30;
   color: #fff;
@@ -600,6 +595,49 @@ hr {
   border-top: 1px solid #ccc;
   margin: 1em 0;
   padding: 0; }
+
+/**
+ * Lists
+ */
+/* line 46, ../../source/scss/base/_base.scss */
+ul, ol {
+  margin-left: 30px; }
+
+/* line 49, ../../source/scss/base/_base.scss */
+li > ul, li > ol {
+  margin-bottom: 0; }
+
+/**
+ * Headings
+ */
+/* line 56, ../../source/scss/base/_base.scss */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 300; }
+
+/**
+ * Code formatting
+ */
+/* line 63, ../../source/scss/base/_base.scss */
+pre, code {
+  font-size: 15px;
+  border: 1px solid #e8e8e8;
+  border-radius: 3px;
+  background-color: #eef; }
+
+/* line 69, ../../source/scss/base/_base.scss */
+code {
+  padding: 1px 5px; }
+
+/* line 72, ../../source/scss/base/_base.scss */
+pre {
+  padding: 8px 12px;
+  overflow-x: scroll; }
+
+/* line 76, ../../source/scss/base/_base.scss */
+pre > code {
+  border: 0;
+  padding-right: 0;
+  padding-left: 0; }
 
 /* ==|====================
    Base/Form
@@ -667,12 +705,201 @@ textarea {
 /* ==|====================
    Layout/Header
    ======================= */
+/**
+ * Wrapper
+ */
+/* line 12, ../../source/scss/layout/_header.scss */
+.wrapper {
+  max-width: -webkit-calc(800px - (30px * 2));
+  max-width: calc(800px - (30px * 2));
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 30px;
+  padding-left: 30px; }
+
+@media screen and (max-width: 800px) {
+  /* line 20, ../../source/scss/layout/_header.scss */
+  .wrapper {
+    max-width: -webkit-calc(800px - (30px));
+    max-width: calc(800px - (30px));
+    padding-right: 15px;
+    padding-left: 15px; } }
+/**
+ * Clearfix
+ */
+/* line 29, ../../source/scss/layout/_header.scss */
+.wrapper:after, .footer-col-wrapper:after {
+  content: "";
+  display: table;
+  clear: both; }
+
+/**
+ * Icons
+ */
+/* line 37, ../../source/scss/layout/_header.scss */
+.icon > svg {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  vertical-align: middle; }
+
+/* line 42, ../../source/scss/layout/_header.scss */
+.icon > svg path {
+  fill: #828282; }
+
+/**
+ * Site header
+ */
+/* line 48, ../../source/scss/layout/_header.scss */
+.site-header {
+  border-top: 5px solid #424242;
+  border-bottom: 1px solid #e8e8e8;
+  min-height: 56px;
+  position: relative; }
+
+/* line 54, ../../source/scss/layout/_header.scss */
+.site-title {
+  font-size: 26px;
+  line-height: 56px;
+  letter-spacing: -1px;
+  margin-bottom: 0;
+  float: left; }
+
+/* line 60, ../../source/scss/layout/_header.scss */
+.site-title, .site-title:visited {
+  color: #424242; }
+
+/* line 63, ../../source/scss/layout/_header.scss */
+.site-nav {
+  float: right;
+  line-height: 56px; }
+
+/* line 66, ../../source/scss/layout/_header.scss */
+.site-nav .menu-icon {
+  display: none; }
+
+/* line 68, ../../source/scss/layout/_header.scss */
+.site-nav .page-link {
+  color: #111;
+  line-height: 1.5; }
+
+/* line 71, ../../source/scss/layout/_header.scss */
+.site-nav .page-link:not(:first-child) {
+  margin-left: 20px; }
+
+@media screen and (max-width: 600px) {
+  /* line 74, ../../source/scss/layout/_header.scss */
+  .site-nav {
+    position: absolute;
+    top: 9px;
+    right: 30px;
+    background-color: #fdfdfd;
+    border: 1px solid #e8e8e8;
+    border-radius: 5px;
+    text-align: right; }
+
+  /* line 82, ../../source/scss/layout/_header.scss */
+  .site-nav .menu-icon {
+    display: block;
+    float: right;
+    width: 36px;
+    height: 26px;
+    line-height: 0;
+    padding-top: 10px;
+    text-align: center; }
+
+  /* line 90, ../../source/scss/layout/_header.scss */
+  .site-nav .menu-icon > svg {
+    width: 18px;
+    height: 15px; }
+
+  /* line 93, ../../source/scss/layout/_header.scss */
+  .site-nav .menu-icon > svg path {
+    fill: #424242; }
+
+  /* line 95, ../../source/scss/layout/_header.scss */
+  .site-nav .trigger {
+    clear: both;
+    display: none; }
+
+  /* line 98, ../../source/scss/layout/_header.scss */
+  .site-nav:hover .trigger {
+    display: block;
+    padding-bottom: 5px; }
+
+  /* line 101, ../../source/scss/layout/_header.scss */
+  .site-nav .page-link {
+    display: block;
+    padding: 5px 10px; } }
 /* ==|====================
    Layout/Nav
    ======================= */
 /* ==|====================
    Layout/Footer
    ======================= */
+/**
+ * Site footer
+ */
+/* line 12, ../../source/scss/layout/_footer.scss */
+.site-footer {
+  border-top: 1px solid #e8e8e8;
+  padding: 30px 0; }
+
+/* line 16, ../../source/scss/layout/_footer.scss */
+.footer-heading {
+  font-size: 18px;
+  margin-bottom: 15px; }
+
+/* line 20, ../../source/scss/layout/_footer.scss */
+.contact-list,
+.social-media-list {
+  list-style: none;
+  margin-left: 0; }
+
+/* line 25, ../../source/scss/layout/_footer.scss */
+.footer-col-wrapper {
+  font-size: 15px;
+  color: #828282;
+  margin-left: -15px; }
+
+/* line 30, ../../source/scss/layout/_footer.scss */
+.footer-col {
+  float: left;
+  margin-bottom: 15px;
+  padding-left: 15px; }
+
+/* line 35, ../../source/scss/layout/_footer.scss */
+.footer-col-1 {
+  width: -webkit-calc(35% - (30px / 2));
+  width: calc(35% - (30px / 2)); }
+
+/* line 39, ../../source/scss/layout/_footer.scss */
+.footer-col-2 {
+  width: -webkit-calc(20% - (30px / 2));
+  width: calc(20% - (30px / 2)); }
+
+/* line 43, ../../source/scss/layout/_footer.scss */
+.footer-col-3 {
+  width: -webkit-calc(45% - (30px / 2));
+  width: calc(45% - (30px / 2)); }
+
+@media screen and (max-width: 800px) {
+  /* line 48, ../../source/scss/layout/_footer.scss */
+  .footer-col-1,
+  .footer-col-2 {
+    width: -webkit-calc(50% - (30px / 2));
+    width: calc(50% - (30px / 2)); }
+
+  /* line 53, ../../source/scss/layout/_footer.scss */
+  .footer-col-3 {
+    width: -webkit-calc(100% - (30px / 2));
+    width: calc(100% - (30px / 2)); } }
+@media screen and (max-width: 600px) {
+  /* line 57, ../../source/scss/layout/_footer.scss */
+  .footer-col {
+    float: none;
+    width: -webkit-calc(100% - (30px / 2));
+    width: calc(100% - (30px / 2)); } }
 /* ==|====================
    Layout/Constrained
    ======================= */
@@ -757,3 +984,261 @@ textarea {
   /* line 35, ../../source/scss/modules/_btn.scss */
   .btn-color2:hover {
     background: #bd1d1f; }
+
+/**
+ * Syntax highlighting styles
+ */
+/* line 4, ../../source/scss/modules/_highlight.scss */
+.highlight {
+  background: #fff; }
+
+/* line 6, ../../source/scss/modules/_highlight.scss */
+.highlight .c {
+  color: #998;
+  font-style: italic; }
+
+/* line 9, ../../source/scss/modules/_highlight.scss */
+.highlight .err {
+  color: #a61717;
+  background-color: #e3d2d2; }
+
+/* line 12, ../../source/scss/modules/_highlight.scss */
+.highlight .k {
+  font-weight: bold; }
+
+/* line 14, ../../source/scss/modules/_highlight.scss */
+.highlight .o {
+  font-weight: bold; }
+
+/* line 16, ../../source/scss/modules/_highlight.scss */
+.highlight .cm {
+  color: #998;
+  font-style: italic; }
+
+/* line 19, ../../source/scss/modules/_highlight.scss */
+.highlight .cp {
+  color: #999;
+  font-weight: bold; }
+
+/* line 22, ../../source/scss/modules/_highlight.scss */
+.highlight .c1 {
+  color: #998;
+  font-style: italic; }
+
+/* line 25, ../../source/scss/modules/_highlight.scss */
+.highlight .cs {
+  color: #999;
+  font-weight: bold;
+  font-style: italic; }
+
+/* line 29, ../../source/scss/modules/_highlight.scss */
+.highlight .gd {
+  color: #000;
+  background-color: #fdd; }
+
+/* line 32, ../../source/scss/modules/_highlight.scss */
+.highlight .gd .x {
+  color: #000;
+  background-color: #faa; }
+
+/* line 35, ../../source/scss/modules/_highlight.scss */
+.highlight .ge {
+  font-style: italic; }
+
+/* line 37, ../../source/scss/modules/_highlight.scss */
+.highlight .gr {
+  color: #a00; }
+
+/* line 39, ../../source/scss/modules/_highlight.scss */
+.highlight .gh {
+  color: #999; }
+
+/* line 41, ../../source/scss/modules/_highlight.scss */
+.highlight .gi {
+  color: #000;
+  background-color: #dfd; }
+
+/* line 44, ../../source/scss/modules/_highlight.scss */
+.highlight .gi .x {
+  color: #000;
+  background-color: #afa; }
+
+/* line 47, ../../source/scss/modules/_highlight.scss */
+.highlight .go {
+  color: #888; }
+
+/* line 49, ../../source/scss/modules/_highlight.scss */
+.highlight .gp {
+  color: #555; }
+
+/* line 51, ../../source/scss/modules/_highlight.scss */
+.highlight .gs {
+  font-weight: bold; }
+
+/* line 53, ../../source/scss/modules/_highlight.scss */
+.highlight .gu {
+  color: #aaa; }
+
+/* line 55, ../../source/scss/modules/_highlight.scss */
+.highlight .gt {
+  color: #a00; }
+
+/* line 57, ../../source/scss/modules/_highlight.scss */
+.highlight .kc {
+  font-weight: bold; }
+
+/* line 59, ../../source/scss/modules/_highlight.scss */
+.highlight .kd {
+  font-weight: bold; }
+
+/* line 61, ../../source/scss/modules/_highlight.scss */
+.highlight .kp {
+  font-weight: bold; }
+
+/* line 63, ../../source/scss/modules/_highlight.scss */
+.highlight .kr {
+  font-weight: bold; }
+
+/* line 65, ../../source/scss/modules/_highlight.scss */
+.highlight .kt {
+  color: #458;
+  font-weight: bold; }
+
+/* line 68, ../../source/scss/modules/_highlight.scss */
+.highlight .m {
+  color: #099; }
+
+/* line 70, ../../source/scss/modules/_highlight.scss */
+.highlight .s {
+  color: #d14; }
+
+/* line 72, ../../source/scss/modules/_highlight.scss */
+.highlight .na {
+  color: #008080; }
+
+/* line 74, ../../source/scss/modules/_highlight.scss */
+.highlight .nb {
+  color: #0086B3; }
+
+/* line 76, ../../source/scss/modules/_highlight.scss */
+.highlight .nc {
+  color: #458;
+  font-weight: bold; }
+
+/* line 79, ../../source/scss/modules/_highlight.scss */
+.highlight .no {
+  color: #008080; }
+
+/* line 81, ../../source/scss/modules/_highlight.scss */
+.highlight .ni {
+  color: #800080; }
+
+/* line 83, ../../source/scss/modules/_highlight.scss */
+.highlight .ne {
+  color: #900;
+  font-weight: bold; }
+
+/* line 86, ../../source/scss/modules/_highlight.scss */
+.highlight .nf {
+  color: #900;
+  font-weight: bold; }
+
+/* line 89, ../../source/scss/modules/_highlight.scss */
+.highlight .nn {
+  color: #555; }
+
+/* line 91, ../../source/scss/modules/_highlight.scss */
+.highlight .nt {
+  color: #000080; }
+
+/* line 93, ../../source/scss/modules/_highlight.scss */
+.highlight .nv {
+  color: #008080; }
+
+/* line 95, ../../source/scss/modules/_highlight.scss */
+.highlight .ow {
+  font-weight: bold; }
+
+/* line 97, ../../source/scss/modules/_highlight.scss */
+.highlight .w {
+  color: #bbb; }
+
+/* line 99, ../../source/scss/modules/_highlight.scss */
+.highlight .mf {
+  color: #099; }
+
+/* line 101, ../../source/scss/modules/_highlight.scss */
+.highlight .mh {
+  color: #099; }
+
+/* line 103, ../../source/scss/modules/_highlight.scss */
+.highlight .mi {
+  color: #099; }
+
+/* line 105, ../../source/scss/modules/_highlight.scss */
+.highlight .mo {
+  color: #099; }
+
+/* line 107, ../../source/scss/modules/_highlight.scss */
+.highlight .sb {
+  color: #d14; }
+
+/* line 109, ../../source/scss/modules/_highlight.scss */
+.highlight .sc {
+  color: #d14; }
+
+/* line 111, ../../source/scss/modules/_highlight.scss */
+.highlight .sd {
+  color: #d14; }
+
+/* line 113, ../../source/scss/modules/_highlight.scss */
+.highlight .s2 {
+  color: #d14; }
+
+/* line 115, ../../source/scss/modules/_highlight.scss */
+.highlight .se {
+  color: #d14; }
+
+/* line 117, ../../source/scss/modules/_highlight.scss */
+.highlight .sh {
+  color: #d14; }
+
+/* line 119, ../../source/scss/modules/_highlight.scss */
+.highlight .si {
+  color: #d14; }
+
+/* line 121, ../../source/scss/modules/_highlight.scss */
+.highlight .sx {
+  color: #d14; }
+
+/* line 123, ../../source/scss/modules/_highlight.scss */
+.highlight .sr {
+  color: #009926; }
+
+/* line 125, ../../source/scss/modules/_highlight.scss */
+.highlight .s1 {
+  color: #d14; }
+
+/* line 127, ../../source/scss/modules/_highlight.scss */
+.highlight .ss {
+  color: #990073; }
+
+/* line 129, ../../source/scss/modules/_highlight.scss */
+.highlight .bp {
+  color: #999; }
+
+/* line 131, ../../source/scss/modules/_highlight.scss */
+.highlight .vc {
+  color: #008080; }
+
+/* line 133, ../../source/scss/modules/_highlight.scss */
+.highlight .vg {
+  color: #008080; }
+
+/* line 135, ../../source/scss/modules/_highlight.scss */
+.highlight .vi {
+  color: #008080; }
+
+/* line 137, ../../source/scss/modules/_highlight.scss */
+.highlight .il {
+  color: #099; }
